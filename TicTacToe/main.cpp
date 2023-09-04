@@ -30,8 +30,36 @@ int main () {
 	printBoard(board);}
 	return 0; }
 
+bool winCondition(std::array<std::string,SIZE>& board){
 
+}
 
+bool checkRow(std::array<std::string,SIZE>& board, std::string player){
+	for (int row = 0; row <= SIZE*2/3; row = row + 3) {
+		if (board[row] == player && board[row+1] == player && board[row+2] == player){	
+			return true;
+		}
+	}
+	return false;
+}
+
+bool checkColumn(std::array<std::string,SIZE>& board, std::string player){
+	for (int column = 0; column <= SIZE/2; column++) {
+		if (board[column] == player && board[column+3] == player && board[column+6] == player){	
+			return true;
+		}
+	}
+	return false;
+}
+
+bool checkDiagonal(std::array<std::string,SIZE>& board, std::string player){
+	for (int row = 0; row <= SIZE/3; row = row + 3) {
+		if (board[row] == player && board[row+1] == player && board[row+2] == player){	
+			return true;
+		}
+	}
+	return false;
+}
 int initialSetup(){
 	srand(time(0));	
 	int randomNum = 1 + rand()% 2; std::cout << "Welcome to Tic-Tac-Toe" << std::endl; std::cout << "The coinflip will decide if player 1 or player 2 starts" << std::endl;
