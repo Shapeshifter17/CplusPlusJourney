@@ -7,6 +7,14 @@
 int initialSetup();
 std::array<std::string, SIZE> initializeBoard();
 void printBoard(std::array<std::string,SIZE>& board);
+bool checkRow(std::array<std::string,SIZE>& board, std::string player);
+bool checkColumn(std::array<std::string,SIZE>& board, std::string player);
+bool checkDiagonal(std::array<std::string,SIZE>& board, std::string player);
+bool winCondition(std::array<std::string,SIZE>& board, std::string player);
+
+
+
+
 int main () {
 	
 	int randomNum = initialSetup();
@@ -26,12 +34,29 @@ int main () {
 				randomNum = 1;		
 			break;
 		}
+			printBoard(board);
+		if (winCondition(
+			board, "X")) {
+			std::cout << "Player 1 won!" << std::endl;	
+			printBoard(board);
+			return 0;
+		}
+		if (winCondition(board, "0")) {
+			std::cout << "PLayer 2 won!" << std::endl;
+			printBoard(board);
+			return 0;
+		}
 
-	printBoard(board);}
+}
 	return 0; }
 
-bool winCondition(std::array<std::string,SIZE>& board){
-
+bool winCondition(std::array<std::string,SIZE>& board, std::string player){
+	if (checkRow(board, player) || checkColumn(board,player) || checkDiagonal(board,player)) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 bool checkRow(std::array<std::string,SIZE>& board, std::string player){
