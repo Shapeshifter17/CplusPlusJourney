@@ -7,6 +7,6 @@ using std::string;
 class board{
 	public:
 	static array<string, SIZE> initializeBoard();
-	static void printBoard(array<string, SIZE>);
+	static void printBoard(array<string, SIZE>&);
 	static int initialSetup();
 };

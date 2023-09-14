@@ -31,7 +31,7 @@ using std::endl;
 	return randomNum;
 }
 
-	void printBoard(array<string,SIZE>& board){
+	void board::printBoard(array<string,SIZE>& board){
         string firstInput;
         string secondInput;
         string thirdInput;
