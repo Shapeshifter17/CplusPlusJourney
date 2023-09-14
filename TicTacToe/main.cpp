@@ -3,12 +3,15 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string>
+#include "board.h"
 #define SIZE  9
-int initialSetup();
-std::array<std::string, SIZE> initializeBoard();
-void printBoard(std::array<std::string,SIZE>& board);
-bool checkRow(std::array<std::string,SIZE>& board, std::string player);
-bool checkColumn(std::array<std::string,SIZE>& board, std::string player);
+
+using std::string;
+using std::array;
+using std::cin;
+using std::cout;
+bool checkRow(array<string,SIZE>& board,string player);
+bool checkColumn(array<string,SIZE>& board,string player);
 bool checkDiagonal(std::array<std::string,SIZE>& board, std::string player);
 bool winCondition(std::array<std::string,SIZE>& board, std::string player);
 
@@ -17,12 +20,12 @@ bool winCondition(std::array<std::string,SIZE>& board, std::string player);
 
 int main () {
 	
-	int randomNum = initialSetup();
+	int randomNum = board::initialSetup();
 	int input;
-	std::array<std::string,SIZE>board = initializeBoard();
+	array<string,SIZE>board = board::initializeBoard();
 
 	while (true) {
-		std::cin >> input;
+		cin >> input;
 		input --;
 		switch (randomNum) {
 			case 1:
@@ -34,16 +37,16 @@ int main () {
 				randomNum = 1;		
 			break;
 		}
-			printBoard(board);
+		board::printBoard(board);
 		if (winCondition(
 			board, "X")) {
-			std::cout << "Player 1 won!" << std::endl;	
-			printBoard(board);
+			cout << "Player 1 won!" << std::endl;	
+			board::printBoard(board);
 			return 0;
 		}
 		if (winCondition(board, "0")) {
-			std::cout << "PLayer 2 won!" << std::endl;
-			printBoard(board);
+			cout << "PLayer 2 won!" << std::endl;
+			board::printBoard(board);
 			return 0;
 		}
 

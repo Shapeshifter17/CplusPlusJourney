@@ -2,8 +2,11 @@
 #include <array>
 #include <string>
 #define SIZE 9
+using std::array;
+using std::string;
 class board{
-	std::array<std::string, SIZE> initializeBoard();
-	void printBoard(std::array<std::string, SIZE>);
-	int initialSetup();
+	public:
+	static array<string, SIZE> initializeBoard();
+	static void printBoard(array<string, SIZE>);
+	static int initialSetup();
 };
