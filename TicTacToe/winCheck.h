@@ -1,12 +1,18 @@
 #include <array>
 #include <string>
 #define SIZE 9
-class winCheck{
 
-	bool winCondition(std::array<std::string, SIZE>& board, std::string player);
-	bool checkRow(std::array<std::string, SIZE>& board, std::string player);
-	bool checkColumn(std::array<std::string, SIZE>& board, std::string player);
-	bool checkDiagonal(std::array<std::string, SIZE>& board, std::string player);
+using std::string;
+using std::array;
+
+class winCheck{
+public:
+	static bool winCondition(array<string, SIZE>& board,string player);
+
+private:
+	 static bool checkRow(array<string, SIZE>& board, string player);
+	 static bool checkColumn(array<string, SIZE>& board,string player);
+	 static bool checkDiagonal(array<string, SIZE>& board, string player);
 
 
 
