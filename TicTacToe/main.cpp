@@ -29,21 +29,25 @@ int main () {
 					randomNum = 1;
 					break;
 				}
+				else{
+					board[input] = "X";
+					randomNum = 2;	
+					break;
 
-				board[input] = "X";
-				randomNum = 2;		
-			break;
+				}
+					
+			
 			case 2:
 				if (board[input] == "X" || board[input] == "0") {
 					cout << "spot already taken try again" << endl;
 					randomNum = 2;
 					break;
 				}
-
-
-				board[input] = "0";
-				randomNum = 1;		
-			break;
+				else{
+					board[input] = "0";
+					randomNum = 1;
+					break;
+				}
 		}
 		board::printBoard(board);
 		if (winCheck::winCondition(
