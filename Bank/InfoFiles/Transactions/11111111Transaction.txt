@@ -1,0 +1,6 @@
+Initial, 0 , 1/10,2023
+Deposit, 800 , 3/10,2023
+Withdrawal, 100, 4/10,2023
+Deposit, 500, 8/10,2023
+Withdrawal, 200, 10/10,2023
+Deposit, 900, 12/10,2023
